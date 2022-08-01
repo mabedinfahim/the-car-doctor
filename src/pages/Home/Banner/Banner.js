@@ -7,6 +7,8 @@ import Banner3 from '../../../images/banner/banner3.jpg'
 
 const Banner = () => {
     return (
+      <div className="row">
+        <div className="col-12">
         <Carousel variant="white" className="mb-5">
         <Carousel.Item>
           <img
@@ -44,6 +46,8 @@ const Banner = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+        </div>
+      </div>
     );
 };
 
