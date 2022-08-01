@@ -2,6 +2,7 @@ import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import Header from './pages/Header/Header';
 import Home from './pages/Home/Home/Home';
+import Footer from './pages/Footer/Footer';
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/"></Route>
         <Route path="/"></Route>
       </Routes>
+      <Footer/>
     </>
   );
 }
