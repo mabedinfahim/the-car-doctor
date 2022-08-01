@@ -1,10 +1,23 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-const Service = () => {
+const Service = ({service}) => {
+    const {name,price,description,img} = service;
     return (
-        <div>
-            
-        </div>
+      <div className="col-4">
+          <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={img} />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+          {description}
+        </Card.Text>
+        <Card.Text>Taka: {price}</Card.Text>
+        <Button variant='secondary'>Learn More</Button>
+      </Card.Body>
+    </Card>
+      </div>
     );
 };
 
