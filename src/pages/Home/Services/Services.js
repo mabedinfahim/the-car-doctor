@@ -12,7 +12,7 @@ const Services = () => {
         <div className="container">
             <div className="py-5">
                 <h2 className="text-center">Our Services</h2>
-                <div style={{borderBottom: '2px solid #212529',width:"200px",height:"1px",margin:"auto"}}></div>
+                <div style={{backgroundColor:'#212529',width:"180px",height:"2px",margin:"auto"}}></div>
             </div>
             <div className="row g-5 pb-5 pt-1">
             {services.map(data=><Service key={data.id} service={data}/>)}
