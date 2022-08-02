@@ -6,7 +6,7 @@ const Footer = () => {
     const year=today.getFullYear();
     return (
         <div className="py-5 mt-5" style={{backgroundColor:"#212529",height:"60px"}}>
-            <h6 className="text-white text-center">Copyright &copy; {year} <img style={{width:"300px",height:"30px"}} src={logo} alt="logo"/></h6>
+            <h6 className="text-white text-center">Copyright &copy; {year} <img style={{width:"80px",height:"30px"}} src={logo} alt="logo"/></h6>
         </div>
     );
 };
