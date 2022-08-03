@@ -6,7 +6,7 @@ const SignUp = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-10 col-md-8 col-lg-4 mx-auto border px-5 py-3 shadow rounded my-5">
+                <div className="col-10 col-md-8 col-lg-5 mx-auto border px-5 py-3 shadow rounded my-5">
                 <Form>
                     <h4 className="text-center mb-4">Sign Up</h4>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
