@@ -10,9 +10,6 @@ const SignUp = () => {
     const refPassword=useRef("");
     const refConfirmPassword=useRef("");
 
-    const email=refEmail.current.value;
-    const password=refPassword.current.value;
-    const confirmPassword=refConfirmPassword.current.value;
     const [passError,setpassError]=useState("")
 
     const [
@@ -23,15 +20,16 @@ const SignUp = () => {
       ] = useCreateUserWithEmailAndPassword(auth);
     const handelWithSubmit=(event)=>{
         event.preventDefault();
-        console.log("hello")
+        const email=refEmail.current.value;
+        const password=refPassword.current.value;
+        const confirmPassword=refConfirmPassword.current.value;
 
         if(password !== confirmPassword){
             setpassError("Your password dose not match")
             return;
-        }else{
-            setpassError(" ")
-            createUserWithEmailAndPassword(email,password);
         }
+        setpassError(" ")
+        createUserWithEmailAndPassword(email,password);
 
         
     }
