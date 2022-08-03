@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import {Link} from 'react-router-dom'
 
 const SignUp = () => {
     return (
@@ -26,10 +27,11 @@ const SignUp = () => {
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
                 <div className="d-grid justify-content-center align-items-center">
-                <Button variant="primary" type="submit" >
-                    Submit
-                </Button>
+                    <Button variant="primary" type="submit" >
+                        Submit
+                    </Button>
                 </div>
+                <p className="text-center pt-3">Already have an account? <Link to="/sign-in">Sign-In</Link> </p>
             </Form>
                 </div>
             </div>
