@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Link} from 'react-router-dom'
 
 
 const SignIn = () => {
+    const refEmail=useRef("");
+    const refPassword=useRef("");
+    const handelWithSubmit=event=>{
+        event.preventDefault();
+        const email=refEmail.current.value;
+        const password=refPassword.current.value;
+    }
+
     return (
         <div className="container">
             <div className="row">
                 <div className="col-10 col-md-8 col-lg-5 mx-auto border px-5 py-3 shadow rounded my-5">
-                <Form>
+                <Form onSubmit={handelWithSubmit}>
                     <h4 className="text-center mb-4">Sign In</h4>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control ref={refEmail} type="email" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                     </Form.Text>
@@ -21,7 +29,7 @@ const SignIn = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control ref={refPassword} type="password" placeholder="Password" />
                 </Form.Group>
                 <div className="d-grid justify-content-center align-items-center">
                     <Button variant="primary" type="submit" >
