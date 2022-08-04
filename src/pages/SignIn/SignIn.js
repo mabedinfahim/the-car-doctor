@@ -11,19 +11,22 @@ const SignIn = () => {
     const refPassword=useRef("");
 
     const [
-        signInWithEmailAndPassword
+        signInWithEmailAndPassword,user
       ] = useSignInWithEmailAndPassword(auth);
 
       let navigate = useNavigate();
       let location = useLocation();
       let from = location.state?.from?.pathname || "/home";
 
+      if(user){
+        navigate(from, { replace: true })
+      }
+
     const handelWithSubmit=event=>{
         event.preventDefault();
         const email=refEmail.current.value;
         const password=refPassword.current.value;
-        signInWithEmailAndPassword(email, password,navigate(from, { replace: true }));
-        
+        signInWithEmailAndPassword(email, password);   
     }
 
     return (
