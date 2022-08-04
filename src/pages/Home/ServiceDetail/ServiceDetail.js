@@ -19,8 +19,8 @@ const ServiceDetail = () => {
     
    
     return (
-        <div className="d-grid col-5 mx-auto">
-            <h1 className='py-5 text-center'>This is a service page</h1>
+        <div className="d-grid col-md-6 col-lg-6 col-11 mx-auto">
+            <h4 className='py-5 text-center text-uppercase'>This is a Service Details page</h4>
             <Card>
                 <Card.Img variant="top" src={serviceDetails?.img} />
                 <Card.Body>
