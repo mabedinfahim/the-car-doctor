@@ -26,7 +26,7 @@ function App() {
         <Route path="/expert/:id" element={<RequireAuth><ExpertDetail/></RequireAuth>}></Route>
         <Route path="/sign-in" element={<SignIn/>}></Route>
         <Route path="/sign-up" element={<SignUp/>}></Route>
-        <Route path="*" element={<NotFound/>}></Route>
+        <Route path= "*" element={<NotFound/>}></Route>
       </Routes>
       <Footer/>
     </>
