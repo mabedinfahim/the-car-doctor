@@ -4,26 +4,26 @@ import  Card  from 'react-bootstrap/Card';
 
 const ExpertDetail = () => {
     const {id}=useParams();
-    const [expert,setExpert]=useState([])
+    const [expert,setExpert]=useState({})
    
 
     useEffect(()=>{
-        fetch("/experts.json")
+        const url=`http://localhost:5000/expert/${id}`;
+        console.log(url)
+        fetch(url)
         .then(res=>res.json())
         .then(data=>setExpert(data))
     })
 
-    const expertDetails=expert?.find(data=>data?.id==id)
-    console.log(expertDetails)
     return (
         <div className="d-grid col-5 mx-auto">
             <h4 className='py-5 text-center text-uppercase'>This is a service page</h4>
             <Card>
-                <Card.Img variant="top" src={expertDetails?.Img} />
+                <Card.Img variant="top" src={expert?.Img} />
                 <Card.Body>
-                <Card.Title className="text-center">{expertDetails?.name}</Card.Title>
+                <Card.Title className="text-center">{expert?.name}</Card.Title>
                 <Card.Text>
-                {expertDetails?.description}
+                {expert?.description}
                 </Card.Text>
                 </Card.Body>
             </Card>

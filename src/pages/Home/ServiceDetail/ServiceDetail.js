@@ -4,29 +4,26 @@ import { useParams } from 'react-router-dom';
 
 const ServiceDetail = () => {
     const {id}=useParams()
-    const [service,setService]=useState([])
+    const [service,setService]=useState({})
     useEffect(()=>{
-        fetch("/services.json")
+        const url =`http://localhost:5000/service/${id}`
+        fetch(url)
         .then(res=>res.json())
         .then(data=>{
             setService(data)
         })
     },[])
 
-    const serviceDetails=service?.find(data=>data.id ==id)
-    console.log(serviceDetails)
-    
-    
-   
+  
     return (
         <div className="d-grid col-md-6 col-lg-6 col-11 mx-auto">
             <h4 className='py-5 text-center text-uppercase'>This is a Service Details page</h4>
             <Card>
-                <Card.Img variant="top" src={serviceDetails?.img} />
+                <Card.Img variant="top" src={service?.img} />
                 <Card.Body>
-                <Card.Title className="text-center">{serviceDetails?.name}</Card.Title>
+                <Card.Title className="text-center">{service?.name}</Card.Title>
                 <Card.Text>
-                {serviceDetails?.description}
+                {service?.description}
                 </Card.Text>
                 </Card.Body>
             </Card>
