@@ -4,9 +4,9 @@ import Card from 'react-bootstrap/Card';
 import {useNavigate} from 'react-router-dom'
 
 const Service = ({service}) => {
-  const {id,name,price,description,img} = service;
+  const {_id,name,price,description,img} = service;
   const navigate=useNavigate()
-  const serviceDetails=()=>{
+  const serviceDetails=(id)=>{
     navigate(`/service/${id}`)
   }
     return (
@@ -19,7 +19,7 @@ const Service = ({service}) => {
                 {description}
               </Card.Text>
               <Card.Text>Taka: {price}</Card.Text>
-              <Button onClick={()=>serviceDetails(id)} variant='secondary'>Learn More</Button>
+              <Button onClick={()=>serviceDetails(_id)} variant='secondary'>Learn More</Button>
             </Card.Body>
           </Card>
       </div>

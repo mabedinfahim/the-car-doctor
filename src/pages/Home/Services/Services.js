@@ -4,7 +4,7 @@ import Service from '../../Home/Service/Service';
 const Services = () => {
     const [services,setServices]=useState([]);
     useEffect(()=>{
-        fetch('/services.json')
+        fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])
@@ -15,7 +15,7 @@ const Services = () => {
                 <div style={{backgroundColor:'#212529',width:"180px",height:"2px",margin:"auto"}}></div>
             </div>
             <div className="row g-5 pb-5 pt-1">
-            {services.map(data=><Service key={data.id} service={data}/>)}
+            {services.map(data=><Service key={data._id} service={data}/>)}
         </div>
         </div>
     );
