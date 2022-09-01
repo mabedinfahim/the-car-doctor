@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
@@ -9,15 +9,15 @@ const SignUp = () => {
     const refEmail=useRef("");
     const refPassword=useRef("");
     const refConfirmPassword=useRef("");
+    const navigate=useNavigate()
 
-    const [passError,setpassError]=useState("")
+    const [passError,setPassError]=useState("")
 
     const [
         createUserWithEmailAndPassword,
         user,
-        loading,
-        error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+        loading
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
     const handelWithSubmit=(event)=>{
         event.preventDefault();
         const email=refEmail.current.value;
@@ -25,11 +25,12 @@ const SignUp = () => {
         const confirmPassword=refConfirmPassword.current.value;
 
         if(password !== confirmPassword){
-            setpassError("Your password dose not match")
+            setPassError("Your password dose not match")
             return;
         }
-        setpassError(" ")
+        setPassError(" ")
         createUserWithEmailAndPassword(email,password);
+        navigate("/")
 
         
     }

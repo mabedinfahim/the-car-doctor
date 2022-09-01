@@ -6,7 +6,7 @@ import Expert from '../Expert/Expert'
 const Experts = () => {
     const [experts,setExperts]=useState([])
     useEffect(()=>{
-        fetch("/experts.json")
+        fetch("http://localhost:5000/experts")
         .then(res=>res.json())
         .then(data=>setExperts(data))
     },[])
@@ -18,7 +18,7 @@ const Experts = () => {
             </div>
             <div className="row">
                 {
-                experts.map(expert=><Expert key={expert.id} expert={expert}/>) 
+                experts.map(expert=><Expert key={expert._id} expert={expert}/>) 
                 }
             </div>
             

@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import { useNavigate } from 'react-router-dom';
 
 const Expert = ({expert}) => {
-    const {id,name,Img}=expert;
+    const {_id,name,Img}=expert;
     const navigate=useNavigate()
 
     const expertDetails=(id)=>{
@@ -20,7 +20,7 @@ const Expert = ({expert}) => {
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                     </Card.Text>
-                    <Button onClick={()=>expertDetails(id)} variant="secondary">Expert Details</Button>
+                    <Button onClick={()=>expertDetails(_id)} variant="secondary">Expert Details</Button>
                 </Card.Body>
             </Card>
         </div>
