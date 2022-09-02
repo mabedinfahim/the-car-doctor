@@ -16,7 +16,7 @@ const Experts = () => {
                 <h2 className="text-center">Our Experts</h2>
                 <div className="" style={{width:"170px",height:'2px',backgroundColor:'#212529',margin:"auto"}}></div>
             </div>
-            <div className="row">
+            <div className="row  g-5 pb-5 pt-1">
                 {
                 experts.map(expert=><Expert key={expert._id} expert={expert}/>) 
                 }

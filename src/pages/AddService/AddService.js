@@ -3,7 +3,19 @@ import { useForm } from "react-hook-form";
 
 const AddService = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        const url='http://localhost:5000/services'
+        fetch(url,{
+            method:'POST',
+            headers:{
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(data=>
+            data.restore())
+    };
     return (
         <div className="container">
             <div className="row">
@@ -13,6 +25,8 @@ const AddService = () => {
                         <input required className="py-2  px-2" placeholder="Name" {...register("name", { required: true, maxLength: 20 })} />
                         <br />
                         <textarea required className="py-2 px-2" placeholder="Description" {...register("description")} />
+                        <br />
+                        <input required className="py-2 px-2" placeholder="Price" {...register("price")} />
                         <br />
                         <input required className="py-2 px-2" placeholder="Photo url" type="text" {...register("img")} />
                         <br />
