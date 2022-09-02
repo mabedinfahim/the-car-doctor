@@ -7,16 +7,16 @@ const AddService = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-5 mx-auto my-5">
+                <div className="col-10 col-md-8 col-lg-5 mx-auto my-5">
                     <h2 className="text-center mb-5">Add a new service</h2>
                     <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("firstName", { required: true, maxLength: 20 })} />
+                        <input required className="py-2  px-2" placeholder="Name" {...register("name", { required: true, maxLength: 20 })} />
                         <br />
-                        <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
+                        <textarea required className="py-2 px-2" placeholder="Description" {...register("description")} />
                         <br />
-                        <input type="number" {...register("age", { min: 18, max: 99 })} />
+                        <input required className="py-2 px-2" placeholder="Photo url" type="text" {...register("img")} />
                         <br />
-                        <input type="submit" />
+                        <input value="Add service" className="py-2 btn btn-dark" type="submit" />
                     </form>
                 </div>
             </div>
