@@ -12,6 +12,8 @@ import Services from './pages/Home/Services/Services';
 import Experts from './pages/Home/Experts/Experts';
 import RequireAuth from './RequireAuth/RequireAuth';
 import VerifyEmail from './VerifyEmail/VerifyEmail';
+import AddExpert from './pages/AddExpert/AddExpert';
+import AddService from './pages/AddService/AddService';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route path="home/experts" element={<Experts/>}></Route>
         <Route path="/service/:id" element={<RequireAuth><ServiceDetail/></RequireAuth>}></Route>
         <Route path="/expert/:id" element={<RequireAuth><ExpertDetail/></RequireAuth>}></Route>
+        <Route path="/add-service" element={<AddService/>}></Route>
+        <Route path="/add-expert" element={<AddExpert/>}></Route>
         <Route path="/verifyemail" element={<VerifyEmail/>}></Route>
         <Route path="/sign-in" element={<SignIn/>}></Route>
         <Route path="/sign-up" element={<SignUp/>}></Route>
