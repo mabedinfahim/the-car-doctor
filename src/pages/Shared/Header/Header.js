@@ -28,6 +28,7 @@ const Header = () => {
                   <Nav>
                     {user && <Nav.Link eventKey={2} as={Link} to="/add-service">Add service</Nav.Link>}
                     {user && <Nav.Link eventKey={3} as={Link} to="/add-expert">Add expert</Nav.Link>}
+                    {user && <Nav.Link eventKey={4} as={Link} to="/manage">Manage</Nav.Link>}
                     {user?<div className="d-flex"><Nav.Link onClick={handelWithSignOut}>Sign out</Nav.Link></div>:<Nav.Link as={Link} to="/sign-in">Sign In</Nav.Link>}
                     <Nav.Link eventKey={2} as={Link} to="/sign-up">
                       Sign Up
